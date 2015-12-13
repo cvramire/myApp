@@ -52,6 +52,13 @@ angular.module('starter.controllers', [])
   ];
 })
 
+
+.controller('login', function($scope) {
+  $scope.facebookSignIn = function() {
+    console.log('entro a login');
+  }
+})
+
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
@@ -115,6 +122,9 @@ angular.module('starter.controllers', [])
         // the user's ID, a valid access token, a signed request, and the time the access token
         // and signed request each expire
         console.log('getLoginStatus', success.status);
+
+
+        
 
         // Check if we have our user saved
         var user = UserService.getUser('facebook');
@@ -180,7 +190,7 @@ angular.module('starter.controllers', [])
         // Facebook logout
         facebookConnectPlugin.logout(function(){
           $ionicLoading.hide();
-          $state.go('welcome');
+          $state.go('app.search');
         },
         function(fail){
           $ionicLoading.hide();

@@ -1,0 +1,16 @@
+<ion-view class="home-view">
+  <ion-nav-title>
+    <span>Tu Cuenta</span>
+  </ion-nav-title>
+  <ion-content>
+    <div class="row">
+      <div class="col" align="center">
+        <h3 class="welcome-message">Bienvenido, {{user.name}}</h3>
+        <img ng-src="{{user.picture}}">
+        <a class="button button-assertive button-block button-outline" ng-click="showLogOutMenu()">
+          Desconectarse
+        </a>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
